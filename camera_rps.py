@@ -14,13 +14,19 @@ class RockPaperScissor:
         self.user_choice = None
 
     def play(self):
-        while (self.play_count < 5) and (self.user_win < 3) and (self.computer_win < 3) :
-            self.computer_choice = self.get_computer_choice()
-            self.user_choice  = self.get_user_choice()
-            self.check_winner()
-            self.play_count = self.play_count + 1
-            print("Play count: ",self.play_count,"computer choice :", self.computer_choice, "User choice: ", self.user_choice)
-
+        while (self.play_count < 5):
+            if(self.user_win < 3) and (self.computer_win < 3) :
+                self.computer_choice = self.get_computer_choice()
+                self.user_choice  = self.get_user_choice()
+                self.check_winner()
+                self.play_count = self.play_count + 1
+                print("Play count: ",self.play_count,"computer choice :", self.computer_choice, "User choice: ", self.user_choice)
+            elif self.computer_win == 3:
+                print("Computer won!")
+            elif self.user_win == 3:
+                print("User Won!")
+        else:
+            print("Rounds of play is five.")    
     
         
 
