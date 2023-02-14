@@ -17,17 +17,17 @@ def get_winner(computer_choice, user_choice):
         if user_choice == "Paper":
             print("You won!")
         else:
-            print("You lost!")
+            print("You lost")
     elif computer_choice == "Paper":
-        if user_choice == "Scissor":
+        if user_choice == "Scissors":
             print("You won!")
         else:
-            print("You lost!")
-    elif computer_choice == "Scissor":
+            print("You lost")
+    elif computer_choice == "Scissors":
         if user_choice == "Rock":
             print("You won!")
         else:
-            print("You lost!")
+            print("You lost")
             
 
 
@@ -38,4 +38,4 @@ computer_choice = get_computer_choice()
 user_choice = get_user_choice()
 print("computer choice: ",computer_choice)
 print("User choice: ", user_choice)
-get_winner(computer_choice,user_choice)
+get_winner(computer_choice, user_choice)
