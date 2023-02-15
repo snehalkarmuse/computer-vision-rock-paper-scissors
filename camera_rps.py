@@ -7,23 +7,23 @@ import random
 
 class RockPaperScissor:
     def __init__(self):
-        self.computer_win = 0
-        self.user_win = 0
+        self.computer_wins = 0
+        self.user_wins = 0
         self.play_count = 0
         self.computer_choice = None
         self.user_choice = None
 
     def play(self):
         while (self.play_count <= 5):
-            if(self.user_win <= 3) and (self.computer_win <= 3) :
+            if(self.user_wins <= 3) and (self.computer_wins <= 3) :
                 self.computer_choice = self.get_computer_choice()
                 self.user_choice  = self.get_user_choice()
                 self.check_winner()
                 self.play_count = self.play_count + 1
                 print("Play count: ",self.play_count,"computer choice :", self.computer_choice, "User choice: ", self.user_choice)
-            elif self.computer_win == 3:
+            elif self.computer_wins == 3:
                 print("Computer won!")
-            elif self.user_win == 3:
+            elif self.user_wins == 3:
                 print("User Won!")
         else:
             print("Rounds of play is five.")    
@@ -94,34 +94,34 @@ class RockPaperScissor:
 
         if self.computer_choice == self.user_choice:
                 #print("It is a tie!")
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
         elif self.computer_choice == "Rock":
             if self.user_choice == "Paper":
                 #print("You won!")
-                self.user_win = self.user_win + 1
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                self.user_wins = self.user_wins + 1
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
             else:
                 #print("You lost")
-                self.computer_win = self.computer_win + 1
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                self.computer_wins = self.computer_wins + 1
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
         elif self.computer_choice == "Paper":
             if self.user_choice == "Scissor":
                 #print("You won!")
-                self.user_win = self.user_win + 1
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                self.user_wins = self.user_wins + 1
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
             else:
                 #print("You lost")
-                self.computer_win = self.computer_win + 1
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                self.computer_wins = self.computer_wins + 1
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
         elif self.computer_choice == "Scissor":
             if self.user_choice == "Rock":
                 #print("You won!")
-                self.user_win = self.user_win + 1
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                self.user_wins = self.user_wins + 1
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
             else:
                 #print("You lost")
-                self.computer_win = self.computer_win + 1
-                print(f"Computer win: ",{self.computer_win}, "User win: ",{self.user_win})
+                self.computer_wins = self.computer_wins + 1
+                print(f"Computer win: ",{self.computer_wins}, "User win: ",{self.user_wins})
         else:
             print("Enter your choice.")
         
