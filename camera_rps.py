@@ -14,8 +14,8 @@ class RockPaperScissor:
         self.user_choice = None
 
     def play(self):
-        while (self.play_count < 5):
-            if(self.user_win < 3) and (self.computer_win < 3) :
+        while (self.play_count <= 5):
+            if(self.user_win <= 3) and (self.computer_win <= 3) :
                 self.computer_choice = self.get_computer_choice()
                 self.user_choice  = self.get_user_choice()
                 self.check_winner()
