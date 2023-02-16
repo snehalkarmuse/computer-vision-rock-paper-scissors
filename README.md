@@ -1,4 +1,4 @@
-![alt text][]
+![alt text](https://raw.githubusercontent.com/snehalkarmuse/computer-vision-rock-paper-scissors/main/img/rps.webp)
 
 # Computer Vision RPS
 This project is regarding machine learning. Playing a game called Rock Paper and Scissor. Giving visual command to computer as a input.
