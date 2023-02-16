@@ -1,3 +1,5 @@
+![alt text][]
+
 # Computer Vision RPS
 This project is regarding machine learning. Playing a game called Rock Paper and Scissor. Giving visual command to computer as a input.
 
