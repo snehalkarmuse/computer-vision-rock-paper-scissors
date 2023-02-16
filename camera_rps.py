@@ -4,7 +4,7 @@ import numpy as np
 import time
 from datetime import datetime, timedelta
 import random
-
+import sys
 class RockPaperScissor:
     def __init__(self):
         self.computer_wins = 0
@@ -12,6 +12,8 @@ class RockPaperScissor:
         self.play_count = 0
         self.computer_choice = None
         self.user_choice = None
+    
+        
 
     def play(self):
         while (self.play_count <= 5):
@@ -63,17 +65,29 @@ class RockPaperScissor:
     def get_prediction(self):
         now = time.time() # gets the current second to start countdown
         future_time = now + 5    # adding   5 seconds in current time
+
         model = load_model('keras_model.h5')
         cap = cv2.VideoCapture(0)
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-
+        
         while now <= future_time:           # comparing current time and future time in seconds
             now = time.time()               # changing value of now 
+            s = time.gmtime(now)            # converting into seconds format
+            temp = time.strftime("%S", s)   # Taking only seconds from the time.
+            
+            
+            #secs = t % 600
+            #timer = '{:02d}'.format(secs)
+            
 
             ret, frame = cap.read()
             resized_frame = cv2.resize(frame, (224, 224), interpolation = cv2.INTER_AREA)
+            
             image_np = np.array(resized_frame)
             normalized_image = (image_np.astype(np.float32) / 127.0) - 1 # Normalize the image
+            cv2.putText(frame, temp, (20, 20), 1, 1, (0, 255, 255),2, cv2.LINE_AA) # putText() allows to write on the screen.
+                
+                        
             data[0] = normalized_image
             self.prediction = model.predict(data)
             cv2.imshow('frame', frame)
