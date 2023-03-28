@@ -28,6 +28,7 @@ This project is regarding machine learning. Playing a game called Rock Paper and
 - called the play()
 
 ### Milestone 5
+- Play camera_rps.py
 - In get_prediction(), adds countdown for user to know when the screen going to close. 
 - It takes current time using time() from time module.
 - Adds 5 sec. in the time.
